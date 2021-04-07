@@ -89,7 +89,7 @@ class indexer {
 		
 
 		
-		objectOutputStream.writeObject(food);
+		
 		for(String key : food.keySet()){
             double[] value = food.get(key);
             
@@ -138,7 +138,7 @@ class indexer {
             
         }
  
-		
+		objectOutputStream.writeObject(food); //04.01수정 (바뀐 사항을 저장 못함...)
 		objectOutputStream.close();
 		
 		//System.out.println("=========END=========");
