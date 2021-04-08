@@ -41,8 +41,16 @@ public class searcher {
 		//System.out.println(Arrays.toString(arr));
 		//System.out.println(Arrays.toString(num));
 		//System.out.println();
+		int size = kl.size();
+		CalcSim(addr,size,arr,num);
 
 
+		
+	}
+
+	//계산하는 메소드
+	public void CalcSim(String addr, int size,String[] arr, int[]num) throws IOException, ClassNotFoundException
+	{
 		FileInputStream fileStream = new FileInputStream(addr);
 		ObjectInputStream objectInputStream = new ObjectInputStream(fileStream);
 		Object object = objectInputStream.readObject();
@@ -52,7 +60,7 @@ public class searcher {
 
 		HashMap hashMap = (HashMap)object;
 		double[] total = new double[5];
-		for(int i=0;i<kl.size();i++)
+		for(int i=0;i<size;i++)
 		{
 			double[] value = (double[])hashMap.get(arr[i]);
 			if(value == null) {
@@ -129,12 +137,6 @@ public class searcher {
 		System.out.println("1등은 : "+name[0]);
 		System.out.println("2등은 : "+name[1]);
 		System.out.println("3등은 : "+name[2]);
-	}
-
-	//계산하는 메소드
-	public void CalcSim()
-	{
-
 	}
 
 }

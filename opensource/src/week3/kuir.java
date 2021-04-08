@@ -30,8 +30,12 @@ public class kuir {
 			} 
 			else if(args[0].equals("-s")){
 				//-s C:/study/SimpleIR/week3/index.post -q "query"
-				sc.search(args[1],args[2],args[3]);
-			} 
+				if(args[2].equals("-q"))
+				{
+					sc.search(args[1],args[2],args[3]);
+			
+				}
+			}
 			else{
 				System.out.println("잘못 입력하셨습니다.");
 			}
