@@ -12,6 +12,8 @@ public class kuir {
 			makeCollection mc = new makeCollection();
 			makeKeyword mk = new makeKeyword();
 			indexer index = new indexer();
+			searcher sc = new searcher();
+
 			if(args[0].equals("-c")){
 				//	../week2/html_example
 				//	"C:/study/SimpleIR/week3/html_example"
@@ -23,9 +25,17 @@ public class kuir {
 				mk.keyword(args[1]);
 			} 
 			else if(args[0].equals("-i")){
-
+				//-i C:/study/SimpleIR/week3/index.xml
 				index.invert(args[1]);
 			} 
+			else if(args[0].equals("-s")){
+				//-s C:/study/SimpleIR/week3/index.post -q "query"
+				if(args[2].equals("-q"))
+				{
+					sc.search(args[1],args[2],args[3]);
+			
+				}
+			}
 			else{
 				System.out.println("잘못 입력하셨습니다.");
 			}
